@@ -1,29 +1,35 @@
-function forLoop(array){
-  for(var i = 0; i<25; i++){
-    if(i===1){
-      array.push('I am 1 strange loop.');
-    }
-    else {
-      array.push(`I am ${i} strange loops.`);
-    }
+function theBeatlesPlay(musicians, instruments){
+  var arr= [];
+  for(var i=0; i<musicians.length; i++){
+    arr.push(musicians[i] + ' plays ' + instruments[i]);
   }
-  return array;
+  return arr;
 }
 
-function whileLoop(n){
-  while(n>0){
-    console.log(n);
-    n=n-1;
-  }
-  return 'done';
+function johnLennonFacts(facts){
+  var n = 0;
+  var x = facts.length;
+  var backUp = [];
+  while(n < x){
+      if(n===0){
+      backUp = [facts[n] + " hola!!!"];
+    }
+    else{
+      backUp = [...backUp, facts[n] + " hola!!!"];
+      console.log(backUp);
+      facts=[...facts, backUp];
+      console.log(n);
+      n = n+1;  
+    }
+  } 
+  return backUp;
 }
 
-function doWhileLoop (array){
-  function maybeTrue() {
-    return Math.random() >= 0.5;
-  }
-  do {
-    array.pop();
-  } while(array.length > 0 && maybeTrue());
-  return array;
-}  
+function iLoveTheBeatles(n){
+  var arr =[];
+  do{
+    arr=[...arr, "I love the Beatles!"];
+    n=n+1;
+  }while(n<15);
+  return arr;
+}
